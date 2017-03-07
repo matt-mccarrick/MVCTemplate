@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CA1CE1FC-3674-4369-8592-6F7C89EEA08F}</ProjectGuid>
+    <ProjectGuid>{C78E45BF-AD7A-468B-AD83-D8B4DE57C2C4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MVCTemplate.Domain</RootNamespace>
-    <AssemblyName>MVCTemplate.Domain</AssemblyName>
+    <RootNamespace>MVCTemplate.Services</RootNamespace>
+    <AssemblyName>MVCTemplate.Services</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,6 +41,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MVCTemplate.Domain\MVCTemplate.Domain.csproj">
+      <Project>{ca1ce1fc-3674-4369-8592-6f7c89eea08f}</Project>
+      <Name>MVCTemplate.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
