@@ -1,4 +1,7 @@
 ﻿using Microsoft.Practices.Unity;
+using MVCTemplate.Data.Repositories;
+using MVCTemplate.Domain.Sample;
+using MVCTemplate.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,12 +15,12 @@ namespace MVCTemplate.IoC
         public static IUnityContainer RegisterTypes(IUnityContainer container)
         {
             //Register Repos
-            //container.RegisterType<ISampleRepository>(new InjectionFactory((c, t, s) => new SampleRepository()));
-            
+            container.RegisterType<ISampleRepository>(new InjectionFactory((c, t, s) => new SampleRepository()));
+
             //Register Services
-            //container.RegisterType<ISampleService>(new InjectionFacoru((c, t, s) => new SampleService(
-            //      container.Resolve<ISampleRepository>()
-            //)));
+            container.RegisterType<ISampleService>(new InjectionFactory((c, t, s) => new SampleService(
+                  container.Resolve<ISampleRepository>()
+            )));
             return container;
         }
     }

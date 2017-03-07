@@ -10,7 +10,7 @@ namespace MVCTemplate.Web
         public static void RegisterComponents()
         {
 			var container = new UnityContainer();
-
+            
             UnityContainerBootstrapper.RegisterTypes(container);
             
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
